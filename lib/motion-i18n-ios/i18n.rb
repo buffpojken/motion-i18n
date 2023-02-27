@@ -2,6 +2,7 @@ module I18n
   class << self
     def translate(key, substitutions = {})
       str = (NSBundle.mainBundle.localizedStringForKey(key, value:"", table:nil))
+      puts str.inspect
       if str.is_a?(ImmediateRef)
         puts str.methods.inspect
       end
