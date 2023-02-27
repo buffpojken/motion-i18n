@@ -3,6 +3,7 @@ module I18n
     def translate(key, substitutions = {})
       str = (NSBundle.mainBundle.localizedStringForKey(key, value:"", table:nil))
       puts str.inspect
+      puts str.methods.inspect
       String.new("laser").tap do |result|
         substitutions.each do |key, value|
           result.gsub!("%{#{key}}", value.to_s)
