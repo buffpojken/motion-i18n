@@ -1,12 +1,13 @@
 module I18n
   class << self
     def translate(key, substitutions = {})
-      "mungo"
-      # String.new((NSBundle.mainBundle.localizedStringForKey(key, value:"", table:nil))).tap do |result|
-      #   substitutions.each do |key, value|
-      #     result.gsub!("%{#{key}}", value.to_s)
-      #   end
-      # end
+      str = (NSBundle.mainBundle.localizedStringForKey(key, value:"", table:nil))
+      puts str.inspect
+      String.new("laser").tap do |result|
+        substitutions.each do |key, value|
+          result.gsub!("%{#{key}}", value.to_s)
+        end
+      end
     end
     alias t translate
 
